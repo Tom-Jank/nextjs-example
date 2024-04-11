@@ -1,10 +1,14 @@
-import { PostCard } from "@/components/card-post";
+import { AddPost } from "@/components/add-post-button";
+import { Modal } from "@/components/add-post-modal";
+import { DisplayPost } from "@/components/card-post";
 
 export default function Dashboard() {
     return (
         <main className="flex min-h-screen flex-col items-center justify-between py-12 px-24 mb-auto">
+                <Modal />
+                <AddPost />
                 {posts.map(post => (
-                    <PostCard{...post} key={post.id} />
+                    <DisplayPost{...post} key={post.id} />
                 ))}
         </main>
     )
@@ -28,7 +32,7 @@ const posts = [
         title: 'Dupa',
         href: '#',
         description:
-        'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
+        'Illo sint voluptas. Error',
         date: 'Mar 16, 2020',
         datetime: '2020-03-16',
         category: { title: 'Marketing', href: '#' },
@@ -52,7 +56,7 @@ const posts = [
         date: 'Mar 16, 2020',
         datetime: '2020-03-16',
         category: { title: 'Marketing', href: '#' },
-    }, // More posts...
+    },
     {
         id: 5,
         title: 'Boost your conversion rate',
@@ -92,6 +96,5 @@ const posts = [
         date: 'Mar 16, 2020',
         datetime: '2020-03-16',
         category: { title: 'Marketing', href: '#' },
-    }, // More posts...
-
+    },
 ]
